@@ -2,4 +2,281 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--fonts);
+  font-size: var(--main-font-size); 
+  background-color: var(--page-color);
+}
+
+.header {
+  display: grid;
+  position: relative;
+  background: var(--header-background) center/cover no-repeat;
+  grid-template-columns: 1fr minmax(355px, 1fr);
+  padding: var(--padding-grouth);
+}
+
+.decorated-zone::before {
+  position: absolute;
+  top: var(--padding-grouth);
+  right: var(--padding-grouth);
+  content: "";
+  display: block;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  position: absolute;
+  bottom: var(--padding-grouth);
+  left: var(--padding-grouth);
+  content: "";
+  display: block;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.header__theme-menu {
+  grid-column: 1/3;
+  margin-block-start: clamp(75px, -2.2901rem + 29.771vw, 192px);
+  margin-block-end: clamp(65px, -2.3783rem + 27.4809vw, 173px);
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  align-items: end;
+}
+
+.header__theme-menu-button {
+  padding: 1px 13px 4px;
+  line-height: 100%;
+  text-transform: lowercase;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border-color: rgb(var(--accent-color-rgb), 0.4);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-block-end-color: rgb(var(--accent-color-rgb));
+}
+
+.header__theme-menu-item .header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__decoration-dark {
+  position: absolute;
+  color: var(--accent-color);
+  top: clamp(10px, 0.0286rem + 2.5445vw, 21px);
+  right: clamp(38px, 1.7786rem + 2.5445vw, 49px);
+}
+
+.header__decoration-dark::after {
+  position: absolute;
+  top: 7px;
+  right: -20px;
+  content: "";
+  display: block;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.header__heading {
+  font-size: var(--header-font-size);
+  font-weight: bold;
+  grid-column: 1/3;
+  line-height: 83%;
+  color: var(--main-heading-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  margin-inline-start: calc(20px - (2 * var(--padding-grouth)));
+  margin-block-end: clamp(55px, -2.9437rem + 27.2265vw, 162px);
+}
+
+.header__text {
+  grid-column: 2;
+  margin-block-end: clamp(66px, -2.8526rem + 29.771vw, 183px);
+}
+
+.accent-background {
+  background-color: var(--accent-color);
+  color: var(--headings-color);
+}
+
+.heading-bold {
+  font-weight: bold;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(50px, 1.3359rem + 7.6336vw, 80px);
+  padding: clamp(40px, 1.3073rem + 5.0891vw, 60px) var(--padding-grouth);
+  line-height: 130%;
+}
+
+.main__hard-concentrate,
+.main__what-prevects-concentration,
+.how-to-concentrate,
+.photo-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.main__section-header {
+  color: var(--sections-headings-color);
+  font-size: inherit;
+}
+
+.paragraph-heading {
+  margin-block-end: 10px;
+}
+
+.main__sections-text {
+  color: var(--text-color);
+}
+
+.main__text-link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color);
+}
+
+.main__text-link:hover {
+  text-decoration: underline solid var(--text-color);
+}
+
+.main__text-link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.how-to-concentrate h3 {
+  margin-block-end: 20px;
+}
+
+.photo-gallery {
+  margin-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  gap: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.photo-gallery-item {
+  inline-size: 100%;
+}
+
+.footer {
+  display: grid;
+  position: relative;
+  place-items: center;
+  block-size: clamp(668px, 20.5191rem + 90.5852vw, 1024px);
+}
+
+.footer__heading {
+  font-size: var(--header-font-size);
+  font-weight: bold;
+  line-height: 83%;
+  color: var(--main-heading-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media (width >= 768px) {
+  :root {
+    --header-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__theme-menu {
+    margin-block-start: max(119px, calc(192px - 0.2863 * (100vw - 768px)));
+    margin-block-end: max(100px, calc(173px - 0.2863 * (100vw - 768px)));
+  }
+
+  .header__heading {
+    margin-block-end: max(114px, calc(162px - 0.1882 * (100vw - 768px)));
+  }
+
+  .header__text {
+    margin-block-end: max(134px, calc(183px - 0.1922 * (100vw - 768px)));
+    margin-block-end: 117px;
+  }
+
+  .main__hard-concentrate,
+  .main__what-prevects-concentration,
+  .how-to-concentrate,
+  .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .main__hard-concentrate .grid-item,
+  .how-to-concentrate .grid-item {
+    grid-column: 2/4;
+  }
+
+  .main__what-prevects-concentration .grid-item {
+    grid-column: 1/4;
+  }
+
+  .photo-gallery-item {
+    object-fit: cover;
+    object-position: center;
+    block-size: 100%;
+  }
+
+  .photo-gallery-item:nth-child(1) {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .photo-gallery-item:nth-child(2) {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+
+  .photo-gallery-item:nth-child(3) {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+
+  .photo-gallery-item:nth-child(4) {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .photo-gallery-item:nth-child(5) {
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
+
+  .footer {
+    block-size: max(768px, calc(1024px - (100vw - 768px)));
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    margin-block-start: 0;
+    margin-block-end: 273px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .main__what-prevects-concentration .grid-item {
+    grid-column: span 1;
+    grid-row: 2/3;
+  }
 }
