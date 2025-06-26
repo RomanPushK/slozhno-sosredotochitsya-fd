@@ -1,7 +1,9 @@
 .page {
   font-family: var(--fonts);
-  font-size: var(--main-font-size); 
+  font-size: var(--main-font-size);
   background-color: var(--page-color);
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .header {
