@@ -8,7 +8,7 @@
 
 body {
   min-inline-size: 375px;
-  max-inline-size: 1024px;
+  max-inline-size: 1440px;
   margin: 0 auto;
 }
 
@@ -22,6 +22,10 @@ p {
   margin: 0;
   font-size: inherit;
   font-weight: normal;
+}
+
+p {
+  text-wrap: balance;
 }
 
 ul {

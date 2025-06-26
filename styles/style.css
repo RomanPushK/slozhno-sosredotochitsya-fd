@@ -1,7 +1,4 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: var(--fonts);
   font-size: var(--main-font-size); 
   background-color: var(--page-color);
@@ -12,6 +9,9 @@
   position: relative;
   background: var(--header-background) center/cover no-repeat;
   grid-template-columns: 1fr minmax(355px, 1fr);
+  grid-template-rows: auto auto 1fr;
+  min-block-size: 668px;
+  block-size: 100vh;
   padding: var(--padding-grouth);
 }
 
@@ -39,17 +39,37 @@
   border-block-end: 1px solid var(--accent-color);
 }
 
+.header__decoration-dark {
+  position: absolute;
+  color: var(--accent-color);
+  top: clamp(10px, 0.0286rem + 2.5445vw, 21px);
+  right: clamp(38px, 1.7786rem + 2.5445vw, 49px);
+}
+
+.header__decoration-dark::after {
+  position: absolute;
+  top: 7px;
+  right: -20px;
+  content: "";
+  display: block;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
 .header__theme-menu {
   grid-column: 1/3;
-  margin-block-start: clamp(75px, -2.2901rem + 29.771vw, 192px);
-  margin-block-end: clamp(65px, -2.3783rem + 27.4809vw, 173px);
+  justify-self: end;
+  margin-block-start: clamp(65px, -8.486rem + 30.0562vh, 172px);
+  margin-block-end: clamp(65px, -8.486rem + 30.0562vh, 172px);
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
   gap: 9px;
-  align-items: end;
 }
 
 .header__theme-menu-button {
@@ -75,26 +95,6 @@
   pointer-events: none;
 }
 
-.header__decoration-dark {
-  position: absolute;
-  color: var(--accent-color);
-  top: clamp(10px, 0.0286rem + 2.5445vw, 21px);
-  right: clamp(38px, 1.7786rem + 2.5445vw, 49px);
-}
-
-.header__decoration-dark::after {
-  position: absolute;
-  top: 7px;
-  right: -20px;
-  content: "";
-  display: block;
-  inline-size: 9px;
-  block-size: 9px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
-}
-
 .header__heading {
   font-size: var(--header-font-size);
   font-weight: bold;
@@ -103,12 +103,13 @@
   color: var(--main-heading-color);
   text-shadow: 4px 4px 0 var(--accent-color);
   margin-inline-start: calc(20px - (2 * var(--padding-grouth)));
-  margin-block-end: clamp(55px, -2.9437rem + 27.2265vw, 162px);
+  margin-block-end: clamp(55px, -9.111rem + 30.0562vh, 162px);
 }
 
 .header__text {
   grid-column: 2;
-  margin-block-end: clamp(66px, -2.8526rem + 29.771vw, 183px);
+  align-self: start;
+  justify-self: start;
 }
 
 .accent-background {
@@ -180,7 +181,7 @@
   display: grid;
   position: relative;
   place-items: center;
-  block-size: clamp(668px, 20.5191rem + 90.5852vw, 1024px);
+  block-size: 100vh;
 }
 
 .footer__heading {
@@ -195,33 +196,20 @@
   :root {
     --header-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-
-  .header__theme-menu {
-    margin-block-start: max(119px, calc(192px - 0.2863 * (100vw - 768px)));
-    margin-block-end: max(100px, calc(173px - 0.2863 * (100vw - 768px)));
-  }
-
-  .header__heading {
-    margin-block-end: max(114px, calc(162px - 0.1882 * (100vw - 768px)));
-  }
-
-  .header__text {
-    margin-block-end: max(134px, calc(183px - 0.1922 * (100vw - 768px)));
-    margin-block-end: 117px;
-  }
-
+  
   .main__hard-concentrate,
+  .how-to-concentrate {
+    grid-template-columns: 1fr 2fr;
+  }
+
   .main__what-prevects-concentration,
-  .how-to-concentrate,
   .photo-gallery {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
   }
 
   .main__hard-concentrate .grid-item,
   .how-to-concentrate .grid-item {
-    grid-column: 2/4;
+    grid-column: 2/3;
   }
 
   .main__what-prevects-concentration .grid-item {
@@ -258,23 +246,32 @@
     grid-column: 2/4;
     grid-row: 3/4;
   }
-
-  .footer {
-    block-size: max(768px, calc(1024px - (100vw - 768px)));
-  }
 }
 
 @media (width >= 1024px) {
   .header__theme-menu {
     justify-self: center;
     margin-block-start: 0;
-    margin-block-end: 273px;
+    margin-block-end: clamp(273px, 0.7292rem + 34.0278vh, 420px);
   }
 
   .header__theme-menu-list {
     flex-direction: row;
   }
 
+  .header__heading {
+    margin-block-end: clamp(90px, -4.395rem + 24vh, 175px);
+  }
+
+  .main__hard-concentrate,
+  .how-to-concentrate {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .main__hard-concentrate .grid-item,
+  .how-to-concentrate .grid-item {
+    grid-column: 2/4;
+  }
   .main__what-prevects-concentration .grid-item {
     grid-column: span 1;
     grid-row: 2/3;
