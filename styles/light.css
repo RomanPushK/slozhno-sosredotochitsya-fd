@@ -11,7 +11,9 @@
   */
 
   --accent-color: #FF8DCB;
-  --accent-color-rgb: 255, 141, 203;
+  --heading-decorate-color: #353430;
+  --heading-decorate-color-rgb: 
+  --accent-color-rgb: 53, 52, 48;
   --page-color: #FFF1F7;
   --text-color: #353430;
   --sections-headings-color: #353430;
@@ -28,14 +30,16 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --accent-color: #FF8DCB;
-    --accent-color-rgb: 255, 141, 203;
-    --page-color: #FFF1F7;
-    --text-color: #353430;
-    --sections-headings-color: #353430;
-    --headings-color: #353430;
-    --main-heading-color: #FFC2E6;
-    --header-background: url(../images/cover-image-light.png);
+  --accent-color: #FF8DCB;
+  --heading-decorate-color: #353430;
+  --heading-decorate-color-rgb: 
+  --accent-color-rgb: 53, 52, 48;
+  --page-color: #FFF1F7;
+  --text-color: #353430;
+  --sections-headings-color: #353430;
+  --headings-color: #353430;
+  --main-heading-color: #FFC2E6;
+  --header-background: url(../images/cover-image-light.png);
   }
 
   .header__decoration-dark {

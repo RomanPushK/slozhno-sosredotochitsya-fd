@@ -11,10 +11,10 @@
   */
 
   --accent-color: #FF0070;
-  --accent-color-rgb: 255, 0, 112;
-  --page-color: #000028;
   --text-color: #F1B2CE;
   --headings-color: #000028;
+  --heading-decorate-color: #FF0070;
+  --heading-decorate-color-rgb: 255, 0, 112;
   --sections-headings-color: #FF0070;
   --main-heading-color: #DB00FF;
   --header-background: url(../images/cover-image-dark.png);
