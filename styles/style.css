@@ -156,8 +156,7 @@
 }
 
 .main__text-link:hover {
-  text-decoration: underline solid var(--text-color);
-  text-shadow: none;
+  border-bottom: 1px solid var(--text-color);
 }
 
 .main__text-link:focus-visible {
